@@ -1,0 +1,37 @@
+{% extends 'myapp/components/base.html' %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+<a class="btn btn-success" href="{% url 'form' %}">Add</a>
+<table class="table">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for person in persons %}
+        <tr>
+            <th>{{ person.id }}</th>
+            <td>{{ person.name }}</td>
+            <td>{{ person.age }}</td>
+            <td>
+                <a href="edit/{{ person.id }}" class="btn btn-sm btn-warning">Edit</a>
+                <a href="delete/{{ person.id }}" class="btn btn-sm btn-danger" onclick="return confirm('you want to delete {{ person.name }}')">Delete</a>
+            </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

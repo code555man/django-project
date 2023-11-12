@@ -1,0 +1,25 @@
+{% extends 'myapp/components/base.html' %}
+
+{% block title %}Form Page{% endblock %}
+
+{% block content %}
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Name:</label>
+      <input type="text" name="name" class="form-control" value="{{ person.name }}" id="exampleInputEmail1">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Age:</label>
+      <input type="number" name="age" class="form-control" value="{{ person.age }}" id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="btn btn-sm btn-success">Save</button>
+  </form>
+{% endblock %}
