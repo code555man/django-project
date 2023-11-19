@@ -1,0 +1,27 @@
+{% extends 'layout/base.html' %}
+{% load humanize %}
+{% block title %}Book Page{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-2">
+        <img src="{{ book.image.url }}" alt="" class="img-fluid">
+    </div>
+    <div class="col-lg-10">
+        <h1>{{ book.name }}</h1>
+        <h1>{{ book.name }}</h1>
+        <h1>{{ book.name }}</h1>
+        <a class="btn btn-primary" href="{% url 'book:card_add' slug=book.slug %}">Add Card</a>
+    </div>
+    <a href="{% url 'book:index' %}">Back</a>
+</div>
+<div class="card mb-4">
+    <h1>Comment {{ book.get_comment_count }}</h1>
+    {% for c in book.bookcomment_set.all %}
+    <div class="card-body">
+        <h5>{{ c.comment }}</h5>
+        <h5>{{ c.rating }}</h5>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

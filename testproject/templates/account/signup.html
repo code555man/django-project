@@ -1,0 +1,16 @@
+{% extends 'layout/base.html' %}
+{% load django_bootstrap5 %}
+{% block title %}Register{% endblock %}
+
+{% block content %}
+   <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <h1>Sign Up</h1>
+            <form method="post" novalidate>
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <button type="submit" class="btn btn-primary">Sign up</button>
+            </form>
+        </div>
+   </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'layout/base.html' %}
+{% load django_bootstrap5 %}
+
+{% block title %}Add Page{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-6 offset-lg-3 mb-5">
+        <form method="post" enctype="multipart/form-data" novalidate>
+            <h1>Book add</h1>
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button class="btn btn-sm btn-success">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

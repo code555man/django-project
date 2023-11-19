@@ -1,0 +1,33 @@
+{% extends 'layout/base.html' %}
+{% load humanize %}
+{% block title %}Add card{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <h1>Card List</h1>
+        <div class="col-lg-3 offset-lg-3">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in card_items %}
+                    <tr>
+                        <td>{{ c.name }}</td>
+                        <td>{{ c.qty }}</td>
+                        <td>{{ c.price }}</td>
+                        <td>
+                            <a href="{% url 'book:card_delete' slug=c.slug %}">delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
