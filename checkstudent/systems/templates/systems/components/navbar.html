@@ -1,0 +1,15 @@
+{% load static %}
+<header>
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+      <a href="{% url 'index' %}" class="d-flex align-items-center link-body-emphasis text-decoration-none">
+        <img class="border border-dark border-2 rounded-circle" src="{% static 'asset/img/icon.jpg' %}" alt="kpk-school-logo" width="80px" height="80px">
+      </a>
+      <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="{% url 'index' %}"><span class="badge bg-secondary {% if nbar == 'index' %}bg-success{% endif %}"><i class="fa-solid fa-magnifying-glass"></i> เช็คคะแนน</span></a>
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="{% url 'student' %}"><span class="badge bg-secondary {% if nbar == 'student' %}bg-success{% endif %}"><i class="fa-regular fa-clipboard"></i> บันทึกคะแนน</span></a>
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="{% url 'setting' %}"><span class="badge bg-secondary {% if nbar == 'setting' %}bg-success{% endif %}"><i class="fa-solid fa-gear"></i> จัดการ</span></a>
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="{% url 'login' %}"><span class="badge bg-secondary {% if nbar == 'login' %}bg-success{% endif %}"><i class="fa-solid fa-right-to-bracket"></i> ล็อคอิน</span></a>
+        <!-- <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="{% url 'login' %}"><span class="badge bg-danger"><i class="fa-solid fa-right-to-bracket"></i> ล็อคอิน</span></a> -->
+      </nav>
+    </div>
+</header>

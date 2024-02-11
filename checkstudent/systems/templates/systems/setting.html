@@ -1,0 +1,47 @@
+{% extends 'systems/components/base.html' %}
+{% load static %}
+
+{% block title %}บันทึกข้อมูลการเข้าแถว{% endblock %}
+
+{% block body %}
+<main>
+    <h6 class="display-6 text-center mb-4"><span class="badge bg-dark"><i class="fa-solid fa-ranking-star"></i> คะแนนสูงสุด 100 อันดับแรก</span></h6>
+
+    <div class="table-responsive">
+      <table class="table border text-center">
+        <thead>
+          <tr>
+            <th>ลำดับ</th>
+            <th>ชื่อ-สกุล</th>
+            <th><span class="badge bg-success">เข้าแถว</span></th>
+            <th><span class="badge bg-warning">ขาดแถว</span></th>
+            <th><span class="badge bg-primary">คะแนนรวม</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>1</th>
+            <th class="text-start">นายหยอยศักดิ์ นิ่งสกุล</th>
+            <td><span class="badge bg-secondary">10</span></td>
+            <td><span class="badge bg-secondary">10</span></td>
+            <td><span class="badge bg-secondary">10</span></td>
+          </tr>
+          <tr>
+            <th>2</th>
+            <th class="text-start">นายสมตุ่ย ลุยทุ่งกระเจียว</th>
+            <td><span class="badge bg-secondary">10</span></td>
+            <td><span class="badge bg-secondary">10</span></td>
+            <td><span class="badge bg-secondary">10</span></td>
+          </tr>
+          <tr>
+            <th>3</th>
+            <th class="text-start">นายสมหญิง ทิงเกอร์เบล</th>
+            <td><span class="badge bg-secondary">10</span></td>
+            <td><span class="badge bg-secondary">10</span></td>
+            <td><span class="badge bg-secondary">10</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</main>
+{% endblock %}

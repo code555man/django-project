@@ -1,0 +1,52 @@
+
+{% extends 'systems/components/base.html' %}
+{% load static %}
+
+{% block title %}ตรวจสอบสถานะ{% endblock %}
+
+{% block body %}
+<main>
+    <h6 class="display-6 text-center mb-4"><span class="badge bg-dark"><i class="fa-solid fa-magnifying-glass"></i> เช็คคะแนน</span></h6>
+    <div class="table-responsive">
+      <table class="table border text-center" id="viewData">
+        <thead>
+          <tr>
+            <th>ลำดับ</th>
+            <th>ชื่อ-สกุล</th>
+            <th><span class="badge bg-primary">เข้าแถว</span></th>
+            <th><span class="badge bg-primary">ขาดแถว</span></th>
+            <th><span class="badge bg-primary">คะแนนรวม</span></th>
+            <th><span class="badge bg-primary">สถานะ</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>1</th>
+            <th class="text-start">นายหยอยศักดิ์ นิ่งสกุล</th>
+            <td><span class="badge bg-secondary">10</span></td>
+            <td><span class="badge bg-secondary">10</span></td>
+            <td><span class="badge bg-secondary">10</span></td>
+            <td><span class="badge bg-success">ผ่าน</span></td>
+          </tr>
+          <tr>
+            <th>2</th>
+            <th class="text-start">นายสมตุ่ย ลุยทุ่งกระเจียว</th>
+            <td><span class="badge bg-secondary">10</span></td>
+            <td><span class="badge bg-secondary">10</span></td>
+            <td><span class="badge bg-secondary">10</span></td>
+            <td><span class="badge bg-danger">ไม่ผ่าน</span></td>
+          </tr>
+          <tr>
+            <th>3</th>
+            <th class="text-start">นายสมหญิง ทิงเกอร์เบล</th>
+            <td><span class="badge bg-secondary">10</span></td>
+            <td><span class="badge bg-secondary">10</span></td>
+            <td><span class="badge bg-secondary">10</span></td>
+            <td><span class="badge bg-danger">ไม่ผ่าน</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</main>
+
+{% endblock %}
